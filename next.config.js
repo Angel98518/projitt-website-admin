@@ -1,4 +1,5 @@
 /** @type {import('next').NextConfig} */
+const path = require('path');
 const nextConfig = {
   reactStrictMode: false,
   eslint: {
@@ -77,6 +78,22 @@ const nextConfig = {
     ];
   },
   webpack: (config, { dev, isServer }) => {
+    // Fix webpack cache locking issue on Windows
+    if (dev) {
+      const cacheDir = path.resolve(process.cwd(), '.next/cache/webpack');
+      config.cache = {
+        type: 'filesystem',
+        buildDependencies: {
+          config: [__filename],
+        },
+        cacheDirectory: cacheDir,
+      };
+      // Use a more reliable cache strategy for Windows
+      if (process.platform === 'win32') {
+        config.cache.compression = false; // Disable compression to reduce file locking issues
+      }
+    }
+
     // Exclude DND packages from server-side bundle to avoid SSR issues
     if (isServer) {
       config.externals = config.externals || [];

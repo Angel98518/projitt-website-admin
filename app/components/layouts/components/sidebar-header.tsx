@@ -23,7 +23,7 @@ export function SidebarHeader() {
         <div className="dark:hidden">
           <img
             src="/images/logo.png"
-            className="default-logo h-[22px] max-w-none"
+            className="default-logo h-[32px] w-[72px] max-w-none"
             alt="Default Logo"
           />
         </div>

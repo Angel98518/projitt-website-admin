@@ -284,7 +284,7 @@ export function SidebarMenu() {
 
   return (
     <div className='flex flex-col justify-between '>
-      <div className={`kt-scrollable-y-hover scrollbar-hidden flex grow shrink-0 pt-[48px] px-[${settings.layouts.demo1.sidebarCollapse ? '14px' : '24px'}] lg:max-h-[calc(100vh-5.5rem)]`}>
+      <div className={`kt-scrollable-y-hover scrollbar-hidden flex grow shrink-0 pt-[48px] px-[${settings.layouts.demo1.sidebarCollapse ? '18px' : '24px'}] lg:max-h-[calc(100vh-5.5rem)]`}>
         <AccordionMenu
           selectedValue={pathname}
           matchPath={matchPath}
