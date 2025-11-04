@@ -84,7 +84,7 @@ function AlertDialogTitle({
   );
 }
 
-function Alertdiv({
+function AlertDialogDescription({
   className,
   ...props
 }: React.ComponentProps<typeof AlertDialogPrimitive.Description>) {
@@ -129,7 +129,7 @@ export {
   AlertDialogAction,
   AlertDialogCancel,
   AlertDialogContent,
-  Alertdiv,
+  AlertDialogDescription,
   AlertDialogFooter,
   AlertDialogHeader,
   AlertDialogOverlay,
